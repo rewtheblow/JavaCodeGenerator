@@ -1,13 +1,14 @@
 package jp.ac.aiit.gen
 
 
-import java.io.PrintWriter;
-import org.apache.velocity.Template;
-import org.apache.velocity.VelocityContext;
-import org.apache.velocity.app.VelocityEngine;
-import org.apache.velocity.exception.MethodInvocationException;
-import org.apache.velocity.exception.ParseErrorException;
+import java.io.PrintWriter
+import org.apache.velocity.Template
+import org.apache.velocity.VelocityContext
+import org.apache.velocity.app.VelocityEngine
+import org.apache.velocity.exception.MethodInvocationException
+import org.apache.velocity.exception.ParseErrorException
 import org.apache.velocity.exception.ResourceNotFoundException;
+import jp.ac.aiit.gen.entity.Member
 
 object Main {
 
@@ -15,8 +16,11 @@ object Main {
     println("program start")
    
     // データの作成
-    //val members	= List("Atsuki", "Shota", "Ryu")
-    val members		= Array("Atsuki", "Shota", "Ryu")
+//    val members	= List("Atsuki", "Shota", "Ryu")
+//    val members		= Array("Atsuki", "Shota", "Ryu")
+    var members = Array(new Member("しょー", "SE", Array("ソフトウェア開発プロセス特論")),
+    					new Member("りゅー", "プログラマ", Array("ソフトウェア工学特論","システムモデリング特論"))
+    					)
     println ("Data set")
     
 	// Velocity を利用して、テンプレートファイル上にデータを展開し、ファイルに出力
